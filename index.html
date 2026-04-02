@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualisasi Pengeluaran</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Pengelola Keuangan</h1>
+            <button id="theme-toggle" class="btn-secondary">Toggle Dark/Light Mode</button>
+        </header>
+
+        <section id="balance-container" class="card">
+            <h2>Total Pengeluaran</h2>
+            <p id="total-amount">Rp 0</p>
+        </section>
+
+        <main class="grid-layout">
+            <section id="input-section" class="card">
+                <h3>Tambah Transaksi Baru</h3>
+                <form id="expense-form">
+                    <div class="form-group">
+                        <label for="item-name">Nama Barang</label>
+                        <input type="text" id="item-name" placeholder="Contoh: Nasi Goreng" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="amount">Jumlah Uang (Rp)</label>
+                        <input type="text" id="amount" placeholder="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Kategori</label>
+                        <select id="category">
+                            <option value="Makanan">Makanan</option>
+                            <option value="Transportasi">Transportasi</option>
+                            <option value="Hiburan">Hiburan</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" id="submit-btn" class="btn-primary">Tambah Transaksi</button>
+                </form>
+            </section>
+
+            <section id="visual-section" class="card">
+                <h3>Grafik Pengeluaran</h3>
+                <div class="chart-container">
+                    <canvas id="expense-chart"></canvas>
+                </div>
+            </section>
+
+            <section id="history-section" class="card">
+                <div class="history-header">
+                    <h3>Riwayat Transaksi</h3>
+                    <select id="sort-transaction">
+                        <option value="newest">Terbaru</option>
+                        <option value="oldest">Terlama</option>
+                        <option value="highest">Terbesar</option>
+                    </select>
+                </div>
+                <div class="scroll-area">
+                    <ul id="transaction-list">
+                        </ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
